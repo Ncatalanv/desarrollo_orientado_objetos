@@ -1,0 +1,85 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package javaapplication1;
+
+import java.util.Date;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Cetecom
+ */
+public class Medicamento {
+    private String codigo;
+    private String nombre;
+    private String tipo;
+    private int stock;
+    private Date caducidad;
+    
+    
+    public Medicamento(){    
+    }   
+    
+    public Medicamento(String codigo, String nombre, String tipo, int stock, Date caducidad){
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.stock = stock;
+        this.caducidad = caducidad;
+    }
+    
+    //ACCESADORES = Crear los get para acceder a los atributos privados
+    
+    public String getcodigo(){
+        return this.codigo;
+    }
+    
+    public void setcodigo(String codigo){
+        this.codigo = codigo;
+    }
+    
+    public String getnombre(){
+        return this.nombre;
+    }
+    
+    public void setnombre(String nombre){
+        this.nombre = nombre;
+    }
+    
+    public String gettipo(){
+        return this.tipo;
+    }
+    
+    public void settipo(String tipo){
+        this.tipo = tipo;
+    }
+    
+    public int getstock(){
+        return this.stock;
+    }
+    
+    public void setstock(int stock){
+        this.stock = stock;
+    }
+    
+    public Date getcaducidad(){
+        return this.caducidad;
+    }
+    
+    public void setcaducidad(Date caducidad){
+        this.caducidad = caducidad;
+    }
+    
+    //MÉTODOS CUSTOMER
+    
+    Scanner leer = new Scanner(System.in);
+    
+    public void vender(){
+        System.out.println("Ingrese medicamento que desea vender: ");
+        String medicamentovender = leer.nextLine();
+    }
+    
+    
+}
