@@ -12,9 +12,16 @@ public class CarritoDeCompras {
     private String productos;
     private double total;
     
-    
-    public void agregarProducto(String producto){
-        
+    // Si la variable es null tomará el valor del último producto
+    public void agregarProducto(Producto producto){
+        if(this.productos == null){
+            this.productos = producto.getNombre();
+        } else{
+            //Guardar productos ingresados en la variable "productos".
+            this.productos += ", " + producto.getNombre();
+        }
+        //Para ir sumando el total
+        this.total += producto.getPrecio();
     }
 
     public CarritoDeCompras() {
@@ -41,11 +48,8 @@ public class CarritoDeCompras {
         this.total = total;
     }
 
-    @Override
-    public String toString() {
-        return "CarritoDeCompras{" + "productos=" + productos + ", total=" + total + '}';
+    public void mostrarCarrito(){
+        System.out.println("Productos: "+ this.productos);
+        System.out.println("Precio total: "+ this.total);
     }
-    
-    
-    
 }
