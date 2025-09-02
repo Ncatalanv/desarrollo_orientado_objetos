@@ -15,11 +15,30 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String idCliente, String nombre, CarritoDeCompras carro) {
+    public Cliente(String idCliente, String nombre) {
         this.idCliente = idCliente;
         this.nombre = nombre;
-        this.carro = carro;
+        this.carro = new CarritoDeCompras();
     }
+    
+    //Indicamos nombre de la clase y le damos el nombre al objeto.
+    public void comprarProducto(Producto producto){
+        this.carro.agregarProducto(producto);
+        System.out.println(this.nombre+ " ha agregado "+ producto.getNombre() + " al carrito.");
+    }
+    
+    public void verCarrito(){
+        carro.mostrarCarrito();
+    }
+    
+    public void mostrarCliente(){
+        System.out.println(this.idCliente+ " | "+ this.nombre);
+    }
+    
+    
+    
+    
+    
 
     
     public String getIdCliente() {
@@ -50,7 +69,5 @@ public class Cliente {
     public String toString() {
         return "Cliente{" + "idCliente=" + idCliente + ", nombre=" + nombre + ", carro=" + carro + '}';
     }
-    
-    
     
 }
