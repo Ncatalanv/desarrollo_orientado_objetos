@@ -50,6 +50,9 @@ public class Producto {
         return "Producto{" + "idProducto=" + idProducto + ", nombre=" + nombre + ", precio=" + precio + '}';
     }
     
-   
+    public void mostrar(){
+            System.out.println(this.idProducto + " | " + this.nombre + " | " + this.precio);
+    }
+    
     
 }
